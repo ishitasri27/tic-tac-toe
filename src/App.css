@@ -1,0 +1,114 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .game-board {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #333;
+    box-sizing: border-box;
+  }
+  
+  .status {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .board-row {
+    display: flex;
+  }
+  
+  .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .square:hover {
+    background-color: #e4e4e4;
+  }
+  
+  .game-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .game-info ol {
+    padding-left: 0;
+  }
+  
+  .game-info li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .game-info button {
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .game-info button:hover {
+    text-decoration: underline;
+  }
+
+.winner-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .board-row {
+    display: flex;
+  }
+  
+  .square {
+    /* ...existing styles... */
+  
+    position: relative;
+  }
+  
+  .square::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  
+  .square.winning::after {
+    opacity: 1;
+  }
+  
